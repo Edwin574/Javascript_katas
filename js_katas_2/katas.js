@@ -62,12 +62,13 @@ toggleCase('Baba')
 /*
 Write Javascript Program to count the number of times an item appears in an array.
 
-
-
 */
 
-// Code starts here
-
+const countItems = (array, item) => {
+  let counter = array.flat(Infinity).filter(currentItem => currentItem === item).length
+  return counter
+}
+countItems([50, 50, 30, 40, 50, 50, 50], 50)
 // Code ends here/*
 
 /*
@@ -80,8 +81,6 @@ The Password should satisfy the following criteria:
 5. Minimum length of password: 6
 6. Maximum length of password: 12 
 
-
-
 */
 
 // Code starts here
@@ -92,7 +91,7 @@ const passwordValidator = (password) => {
   const special = [];
   const alphabets = "abcdefghijklmnopqrstuvwxyz";
   const upperAlphabet = alphabets.toUpperCase();
-  const specialCharacter=['$', '#', '@']
+  const specialCharacter = ['$', '#', '@']
   for (let i of password) {
     if (i == Number(i) && i !== " ") {
       numbers.push(i);
@@ -103,7 +102,7 @@ const passwordValidator = (password) => {
     } else if (alphabets.includes(i)) {
       lowerCase.push(i);
 
-    } else if (specialCharacter.includes(i)){
+    } else if (specialCharacter.includes(i)) {
       special.push(i);
 
     }
